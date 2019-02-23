@@ -1,0 +1,30 @@
+{
+    "configurations": [
+        {
+            "browse": {
+                "databaseFilename": "",
+                "limitSymbolsToIncludedHeaders": true
+            },
+            "includePath": [
+                "/home/amer/catkin_ws/devel/include",
+                "/opt/ros/kinetic/include",
+                "/home/amer/catkin_ws/src/boty/include",
+                "/home/amer/catkin_ws/src/mycie/catbot_control/include",
+                "/home/amer/catkin_ws/src/mycie/catbot_gazebo_plugins/include",
+                "/home/amer/catkin_ws/src/husky/husky_base/include",
+                "/home/amer/catkin_ws/src/mypkg/include",
+                "/home/amer/catkin_ws/src/navigation_layers/range_sensor_layer/include",
+                "/home/amer/catkin_ws/src/navigation_layers/social_navigation_layers/include",
+                "/home/amer/catkin_ws/src/spcbot/spcbot_description/include",
+                "/home/amer/catkin_ws/src/usb_cam/include",
+                "/usr/include"
+            ],
+            "name": "Linux",
+            "intelliSenseMode": "gcc-x64",
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "c11",
+            "cppStandard": "c++17"
+        }
+    ],
+    "version": 4
+}
