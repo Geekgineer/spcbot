@@ -6,13 +6,14 @@
   <xacro:property name="cameraMass" value="0.1"/>
   
   <xacro:include filename="$(find spcbot_description)/urdf/materials.xacro"/>
-  <xacro:include filename="$(find spcbot_description)/urdf/spcbot.gazebo"/>
+  <xacro:include filename="$(find spcbot_description)/urdf/spcbot.gazebo.xacro"/>
+
   
   <link name='chassis'>
     <pose>0 0 0.1 0 0 0</pose>
 
     <inertial>
-      <mass value="15.0"/>
+      <mass value="5.0"/>
       <origin xyz="0.0 0 0.1" rpy=" 0 0 0"/>
       <inertia
           ixx="0.1" ixy="0" ixz="0"
@@ -39,7 +40,7 @@
       <geometry>
         <sphere radius="0.05"/>
       </geometry>
-      <surface>
+      <!-- <surface>
         <friction>
           <ode>
             <mu>0</mu>
@@ -48,7 +49,7 @@
             <slip2>1.0</slip2>
           </ode>
         </friction>
-      </surface>
+      </surface> -->
     </collision>
 
     <visual name='caster_visual'>
@@ -63,7 +64,7 @@
       <geometry>
         <sphere radius="0.05"/>
       </geometry>
-      <surface>
+      <!-- <surface>
         <friction>
           <ode>
             <mu>0</mu>
@@ -72,7 +73,7 @@
             <slip2>1.0</slip2>
           </ode>
         </friction>
-      </surface>
+      </surface> -->
     </collision>
 
     <visual name='caster_front_visual'>
@@ -142,7 +143,7 @@
     <child link="left_wheel"/>
     <parent link="chassis"/>
     <axis xyz="0 1 0" rpy="0 0 0"/>
-    <limit effort="10000" velocity="1000"/>
+    <!-- <limit effort="10000" velocity="1000"/> -->
     <joint_properties damping="0.0" friction="0.0"/>
   </joint>
 
@@ -152,12 +153,12 @@
     <child link="right_wheel"/>
     <parent link="chassis"/>
     <axis xyz="0 1 0" rpy="0 0 0"/>
-    <limit effort="10000" velocity="1000"/>
+    <!-- <limit effort="10000" velocity="1000"/> -->
     <joint_properties damping="0.0" friction="0.0"/>
   </joint>
 
 
-  <link name="camera">
+  <link name="camera_link">
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
@@ -185,7 +186,7 @@
     <axis xyz="0 1 0" />
     <origin xyz=".2 0 0" rpy="0 0 0"/>
     <parent link="chassis"/>
-    <child link="camera"/>
+    <child link="camera_link"/>
   </joint>
 
   <!-- Hokuyo Laser -->

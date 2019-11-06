@@ -1,11 +1,12 @@
 <?xml version='1.0'?>
 
-<robot>
+<robot name="spcbot_gazebo" xmlns:xacro="http://ros.org/wiki/xacro">
 
-  <gazebo reference="camera">
+  <gazebo reference="camera_link">
     <material>Gazebo/Green</material>
-    <sensor type="camera" name="camera1">
+    <sensor type="camera" name="camera">
       <update_rate>30.0</update_rate>
+      <visualize></visualize>
       <camera name="head">
         <horizontal_fov>1.3962634</horizontal_fov>
         <image>
@@ -21,7 +22,7 @@
       <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
         <alwaysOn>true</alwaysOn>
         <updateRate>0.0</updateRate>
-        <cameraName>spcbot/camera1</cameraName>
+        <cameraName>spcbot/camera</cameraName>
         <imageTopicName>image_raw</imageTopicName>
         <cameraInfoTopicName>camera_info</cameraInfoTopicName>
         <frameName>camera</frameName>
@@ -35,6 +36,8 @@
     </sensor>
   </gazebo>
 
+
+  
   <gazebo>
     <plugin name="differential_drive_controller" filename="libgazebo_ros_diff_drive.so">
       <legacyMode>false</legacyMode>
